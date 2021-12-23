@@ -118,7 +118,7 @@
 
     $ docker container run -d --name stelios-web --publish 80:3000 test:latest
 
-## Image is running!
+## Image is running! :joy:
 
 > Visit a browser and hit the VM_IP:80
 
