@@ -86,5 +86,46 @@
 
     $ docker container rm zealous_hugle
 
-# 
+# 4. Clone an app from git
 
+## Clone the git repo
+
+    $ git clone --branch master https://github.com/steliosot/node1.git
+
+## Enter in the folder 
+
+    $ cd node1
+
+## Create a new Dockerfile
+
+FROM alpine
+LABEL maintainer="steliosot@hotmail.com"
+RUN apk add --update nodejs npm
+COPY . /src
+WORKDIR /src
+RUN  npm install
+RUN  npm install mongoose
+RUN  npm install @hapi/joi bcryptjs jsonwebtoken
+RUN  npm install jsonwebtoken
+EXPOSE 3000
+ENTRYPOINT ["node", "./app.js"]
+
+## Build the image
+
+    $ docker image  build -t test:latest .
+
+## Run it (I will name is stelios-web)
+
+    $ docker container run -d --name stelios-web --publish 80:3000 test:latest
+
+## Image is running!
+
+> Visit a browser and hit the VM_IP:80
+
+## Stop it
+
+    $ docker container stop stelios-web
+
+## Remove it
+
+    $ docker container rm stelios-web 
