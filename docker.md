@@ -2,7 +2,7 @@
 
 ## Update system
 
-    $ sudo groupadd docker
+    $ sudo apt-get update
 
 ## Install docker
 
