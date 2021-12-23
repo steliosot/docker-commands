@@ -31,7 +31,7 @@
     $ docker image ls
 
 # 3. Pull and run an Ubuntu image
-> Ops: Pull an image, start a container, attach to the container
+> ==Ops==: Pull an image, start a container, attach to the container
 > execute a command inside it, stop it, delete it
 
     $ docker pull ubuntu:latest
@@ -87,6 +87,7 @@
     $ docker container rm zealous_hugle
 
 # 4. Clone an app from git
+> This is the ==Dev== part
 
 ## Clone the git repo
 
